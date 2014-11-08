@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=1024"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="author" content="Hebi Li"/>
+  <meta name="description" content="Async Distributed Computing Startup Presentation"/>
+  <title>AsyncDC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="impress-not-supported">
+  <div class="fallback-message">
+    <p>Your browser is not as good. Consider to change one seriously.</p>
+  </div>
+  <div id="impress">
+    <div id="slide1" class="step slide" data-x="-1000" data-y="0">
+      <h2>AsyncDC: Asynchronous Distributed Computing</h2>
+      <div id="test">
+        <div>hello</div>
+      </div>
+      <p>Hebi Li</p>
+    </div>
+    <div id="slide2" class="step slide" data-x="0" data-y="0">
+      <h2>Definition</h2>
+      <div class="subsec">Brief:</div>
+      <p>An substitution of Hadoop implemented in javascript.</p>
+      <div class="subsec">More specificly:</div>
+      <p>
+        A <b>asynchronous</b> distributed computing system implemented in javascript, which can be <b>used both directly
+        in browser and deployed on server machines</b>.
+      </p>
+    </div>
+    <div id="slide3" class="step slide" data-x="1000" data-y="0">
+      <h2>Problem</h2>
+      <p>Hadoop is not good enough.</p>
+      <ul>
+        <li>Not easy and cheap enough to set up</li>
+        <li>Cannot handle lots of concurent IO connection</li>
+      </ul>
+    </div>
+    <div id="slide4" class="step slide" data-x="2000" data-y="0">
+      <h2>Idea</h2>
+      <ul>
+        <li><b>efficiency</b>javascript can run roughly as fast as C and Java on google's V8 engine.</li>
+        <li><b class="red">Easy to set up</b>implement MapReduce in javascript, we can set up a node
+          by just opening a browser and point to the server's IP address,
+          the browser will download the script and start computing using local computing resource, CPU and memory.
+          <ul>
+            <li>it is super easy to set up a cluster for any use.</li>
+            <li>Super easy to add/delete nodes.</li>
+            <li>Super cheap.</li>
+        </li>
+        <li><b>server deploy</b>we can deploy both server node and client node on a traditional server,
+          by running javascript program using nodejs, an overlay of V8 for javascript interpretation.
+        </li><b class="red">unlimited IO connection</b>the model is asynchronous, it can support unlimited connections without block.
+        On the contrary, since hadoop use java, it will create a new thread and block there for a new connection,
+        which is resource consuming and unscalable.
+        </li>
+        <li>Security Consideration</li>
+      </ul>
+    </div>
+    <div id="slide5" class="step slide" data-x="3000" data-y="0">
+      <h2>Usage Senario</h2>
+      <ul>
+        <li>Big Company</li>
+        <li>Small Company</li>
+        <li>Individual: a immediate need</li>
+        <li>Platform as a Service</li>
+      </ul>
+    </div>
+    <div id="slide6" class="step slide" data-x="4000" data-y="0">
+      <h2>Comparison: Setup</h2>
+      Typically when a user want to set up distributed computing, he has two choice:
+      <ul>
+        <li>Buy from Third Party</li>
+        <li>Set up his own</li>
+      </ul>
+      <p>No difference between hadoop and AsyncDC when he choose the first one.</p>
+      <p>However:</p>
+      <ul>
+        <li>he need to pay for third party.</li>
+        <li>not in any case he want to bother to find a third party: EXAMPLE:
+          Sen Wang hardly need any computation ability in his daily life, but one day,
+          he need to process image, which cost 2 hours on his machine. He want to do it in 10 minutes.
+        </li>
+      </ul>
+      <p>If he choose to setup his own, the differences:</p>
+      <ul>
+        <li>using hadoop, he need to set up OS and Hadoop and dependencies for every machine.</li>
+        <li>using AsyncDC, he just need to start AsyncDC in the main machine,
+          and open browsers on as many machine as he want,
+          No matter it's linux, windows, mac, android or ios.
+        </li>
+      </ul>
+    </div>
+    <div id="slide7" class="step slide" data-x="5000" data-y="0">
+      <h2>Comparison: concurrent IO connections.</h2>
+    </div>
+    <div id="slide8" class="step slide" data-x="6000" data-y="0">
+      <h2>Related Work</h2>
+    </div>
+    <div id="slide9" class="step slide" data-x="7000" data-y="0">
+      <h2>chanllenges</h2>
+    </div>
+    <div id="slide10" class="step slide" data-x="8000" data-y="0">
+      <h2>Difficuties that may appear in our implementation</h2>
+    </div>
+  </div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script>
+  <script>impress().init();</script>
+</body>
+</html>
