@@ -120,30 +120,62 @@ body {
   margin: 20px 0;
 }
 
-b {
-  font-weight: bold;
+p {
+  margin-bottom: 0;
+}
+
+li {
+    font-size: 30px;
+    line-height: 46px;
 }
 
 #slide {
   position: relative;
 }
 
-#slide1 h2 {
+/*specification*/
+
+#intro h2 {
   font-size: 2em;
   margin: 0 auto;
-  display: inline;
-  /*margin-top: 200px;*/
+    position: relative;
+    top: 30%;
+    text-align: center;
 }
 
-#slide1 p {
+#intro p {
   float: right;
   margin-right: 40px;
+    top: 50%;
+    position: relative;
 }
 
-/*.slide p {
-    display: block;
-    font-size: 50px;
-    line-height: 72px;
+#idea h,#idea2 h {
+  display: block;
+}
+#idea1 d,#idea2 d {
+  text-indent: 2px;
+}
 
-    margin-top: 100px;
-}*/
+#setup2 ul {
+  position: relative;
+}
+#setup2 span {
+  position: absolute;
+}
+#setup2 span.bracket {
+  font-size: 130px;
+  left: 400px;
+  top: 40px;
+}
+#setup2 span.text {
+  font-size: 30px;
+  top: 48px;
+  left: 470px;
+}
+r {
+  color: red;
+}
+g {
+  color: green;
+}

@@ -14,24 +14,20 @@
     <p>Your browser is not as good. Consider to change one seriously.</p>
   </div>
   <div id="impress">
-    <div id="slide1" class="step slide" data-x="-1000" data-y="0">
+    <div id="intro" class="step slide" data-x="0" data-y="0">
       <h2>AsyncDC: Asynchronous Distributed Computing</h2>
-      <div id="test">
-        <div>hello</div>
-      </div>
       <p>Hebi Li</p>
     </div>
-    <div id="slide2" class="step slide" data-x="0" data-y="0">
+    <div id="definition" class="step slide" data-x="1000" data-y="0">
       <h2>Definition</h2>
       <div class="subsec">Brief:</div>
       <p>An substitution of Hadoop implemented in javascript.</p>
       <div class="subsec">More specificly:</div>
       <p>
-        A <b>asynchronous</b> distributed computing system implemented in javascript, which can be <b>used both directly
-        in browser and deployed on server machines</b>.
+        A <g>asynchronous</g> distributed computing system implemented in javascript, which can be <g>used both directly in browser and deployed on server machines</g>.
       </p>
     </div>
-    <div id="slide3" class="step slide" data-x="1000" data-y="0">
+    <div id="problem" class="step slide" data-x="2000" data-y="0">
       <h2>Problem</h2>
       <p>Hadoop is not good enough.</p>
       <ul>
@@ -39,28 +35,49 @@
         <li>Cannot handle lots of concurent IO connection</li>
       </ul>
     </div>
-    <div id="slide4" class="step slide" data-x="2000" data-y="0">
+    <div id="hadoop" class="step slide" data-x="3000" data-y="0">
+      <h2>Hadoop and Map Reduce</h2>
+    </div>
+    <div id="idea" class="step slide" data-x="4000" data-y="0">
       <h2>Idea</h2>
       <ul>
-        <li><b>efficiency</b>javascript can run roughly as fast as C and Java on google's V8 engine.</li>
-        <li><b class="red">Easy to set up</b>implement MapReduce in javascript, we can set up a node
-          by just opening a browser and point to the server's IP address,
-          the browser will download the script and start computing using local computing resource, CPU and memory.
+        <li>
+          <h>Efficiency</h>
+          <ul>
+            <li>javascript can run roughly as fast as C and Java on google's V8 engine.</li>
+          </ul>
+        </li>
+        <li>
+          <h><g>Easy to set up</g></h>
           <ul>
             <li>it is super easy to set up a cluster for any use.</li>
             <li>Super easy to add/delete nodes.</li>
             <li>Super cheap.</li>
+          </ul>
         </li>
-        <li><b>server deploy</b>we can deploy both server node and client node on a traditional server,
-          by running javascript program using nodejs, an overlay of V8 for javascript interpretation.
-        </li><b class="red">unlimited IO connection</b>the model is asynchronous, it can support unlimited connections without block.
-        On the contrary, since hadoop use java, it will create a new thread and block there for a new connection,
-        which is resource consuming and unscalable.
-        </li>
-        <li>Security Consideration</li>
       </ul>
     </div>
-    <div id="slide5" class="step slide" data-x="3000" data-y="0">
+    <div id="idea2" class="step slide" data-x="5000" data-y="0">
+      <h2>Idea 2</h2>
+      <ul>
+        <li>
+          <h>server deploy</h>
+          <ul>
+            <li>deploy on a traditional server,
+            by nodejs</li>
+          </ul>
+        </li>
+        <li>
+          <h><g>unlimited IO connection</g></h>
+          <ul>
+            <li>asynchronous, accept unlimited connections without blocking.</li>
+            <li>Hadoop creates new threads which blocks there for every new connection</li>
+          </ul>
+        <li>Security Consideration</li>
+        <li>Open a new area to research.</li>
+      </ul>
+    </div>
+    <div id="slide5" class="step slide" data-x="6000" data-y="0">
       <h2>Usage Senario</h2>
       <ul>
         <li>Big Company</li>
@@ -69,41 +86,48 @@
         <li>Platform as a Service</li>
       </ul>
     </div>
-    <div id="slide6" class="step slide" data-x="4000" data-y="0">
+    <div id="setup" class="step slide" data-x="7000" data-y="0">
       <h2>Comparison: Setup</h2>
-      Typically when a user want to set up distributed computing, he has two choice:
       <ul>
         <li>Buy from Third Party</li>
-        <li>Set up his own</li>
-      </ul>
-      <p>No difference between hadoop and AsyncDC when he choose the first one.</p>
-      <p>However:</p>
-      <ul>
-        <li>he need to pay for third party.</li>
-        <li>not in any case he want to bother to find a third party: EXAMPLE:
-          Sen Wang hardly need any computation ability in his daily life, but one day,
-          he need to process image, which cost 2 hours on his machine. He want to do it in 10 minutes.
-        </li>
-      </ul>
-      <p>If he choose to setup his own, the differences:</p>
-      <ul>
-        <li>using hadoop, he need to set up OS and Hadoop and dependencies for every machine.</li>
-        <li>using AsyncDC, he just need to start AsyncDC in the main machine,
-          and open browsers on as many machine as he want,
-          No matter it's linux, windows, mac, android or ios.
-        </li>
+        <li><g>Set up his own</g> because</li>
+        <ul>
+          <li>he need to pay for third party.</li>
+          <li>not in any case does he want to bother to find a third party</li>
+        </ul>
       </ul>
     </div>
-    <div id="slide7" class="step slide" data-x="5000" data-y="0">
+    <div id="setup2" class="step slide" data-x="8000" data-y="0">
+      <h2>Comparison: Setup 2</h2>
+      <ul>
+        <li>hadoop:
+          <ul>
+            <span class="bracket">&#125;</span>
+            <span class="text"><r>On all Machines</r></span>
+            <li>set up OS</li>
+            <li>set up dependencies</li>
+            <li>set up Hadoop and start daemon</li>
+          </ul>
+        </li>
+        <li>AsyncDC
+          <ul>
+            <li>start AsyncDC master daemon in main machine</li>
+            <li>open browsers on as many machine as you want</li>
+          </ul>
+        </li>
+        <p>One more thing, it natually support Linux, Mac, Windows, IOS, android.</p>
+      </ul>
+    </div>
+    <div id="slide7" class="step slide" data-x="9000" data-y="0">
       <h2>Comparison: concurrent IO connections.</h2>
     </div>
-    <div id="slide8" class="step slide" data-x="6000" data-y="0">
+    <div id="slide8" class="step slide" data-x="10000" data-y="0">
       <h2>Related Work</h2>
     </div>
-    <div id="slide9" class="step slide" data-x="7000" data-y="0">
+    <div id="slide9" class="step slide" data-x="11000" data-y="0">
       <h2>chanllenges</h2>
     </div>
-    <div id="slide10" class="step slide" data-x="8000" data-y="0">
+    <div id="slide10" class="step slide" data-x="12000" data-y="0">
       <h2>Difficuties that may appear in our implementation</h2>
     </div>
   </div>
